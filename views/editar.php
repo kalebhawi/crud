@@ -14,13 +14,13 @@
                 <a class="nav-link" href="index.php">CRUD - Cadastrar novo cliente</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="edita.php">Editar</a>
+                <a class="nav-link" href="editar.php">Editar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="deleta.php">Deletar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="exibe.php">Exibir</a>
+                <a class="nav-link" href="listar.php">Exibir</a>
             </li>
         </ul>
     </nav>
