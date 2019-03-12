@@ -24,9 +24,6 @@ class ExibirClientes{
         } else {
             echo "0 results";
         }
-
-
-
         mysqli_close($con);
     }
 }

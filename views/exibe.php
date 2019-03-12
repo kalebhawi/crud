@@ -13,6 +13,23 @@ require_once "../models/exibir.php";
 </head>
 <body class="text-center">
 <header>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">CRUD - Cadastrar novo cliente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="edita.php">Editar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="deleta.php">Deletar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="exibe.php">Exibir</a>
+            </li>
+        </ul>
+    </nav>
+
     <legend>Tabela de clientes cadastrados</legend>
 </header>
 
