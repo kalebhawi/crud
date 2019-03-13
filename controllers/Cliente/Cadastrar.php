@@ -4,28 +4,21 @@ require "..\..\models\ClienteDAO.php";
 
 $clienteDAO = new ClienteDAO();
 $con = $clienteDAO->conectar();
-$id = $_POST['id'];
-var_dump($id);
-var_dump($_POST);
+$id = isset($_POST['id']) ? $_POST['id'] : null;
 
-if (!$id) {
-    $sql = "update clientes set nome = '" . $_POST['nomeCliente'] . "' where id ='" . "$id" . "'";
+if (!is_null($id)) {
+
+    $sql = "update clientes set nome = '{$_POST['nomeCliente']}', cpf_cnpj = '{$_POST['cpfCnpj']}'  where id = $id";
     $clienteBd = mysqli_query($con, $sql);
-    var_dump($sql);
-    $sql = "update clientes set cpf_cnpj = '" . $_POST['cpfCnpj'] . "' where id ='" . "$id" . "'";
-    $clienteBd = mysqli_query($con, $sql);
-    var_dump($sql);
+
+    header("Location: /crud/views/listar.php");
+
 } else {
-    $sql = "INSERT INTO clientes (nome, cpf_cnpj) VALUES ('".$_POST['nomeCliente']."', '".$_POST['cpfCnpj']."')";
+    $sql = "INSERT INTO clientes (nome, cpf_cnpj) VALUES ('" . $_POST['nomeCliente'] . "', '" . $_POST['cpfCnpj'] . "')";
 
     $clienteBd = mysqli_query($con, $sql);
-}
+    header("Location: /crud/views/cadastra.php");
 
-
-if ($clienteBd) {
-    //header("Location: /crud/views/index.php");
-} else {
-    echo "Erro ao cadastrar cliente" . mysqli_error($con);
 }
 
 mysqli_close($con);

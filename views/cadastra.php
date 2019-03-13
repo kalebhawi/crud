@@ -27,10 +27,12 @@ include "../controllers/Cliente/Inserir.php";
                         </label>
 
                         <label for="cpfCnpj">CPF/CNPJ:
-                            <input id="cpfCnpj" name="cpfCnpj" value="<?php echo $cliente['cpf_cnpj'] ?>" type="text" class="form-control" minlength="11" maxlength="14" required>
+                            <input id="cpfCnpj" name="cpfCnpj" value="<?php echo $cliente['cpf_cnpj'] ?>" type="number" class="form-control" minlength="11" maxlength="14" required>
                         </label>
                         <!--input escondido para passar id-->
-                        <input id="id" name="id" type="hidden">
+                        <?php  if(isset($_GET['id']) && !empty($_GET['id'])){ ?>
+                            <input id="id" name="id" type="hidden" value="<?php echo $_GET['id'] ?>  ">
+                        <?php  }?>
 
                     </div>
                 </div>
