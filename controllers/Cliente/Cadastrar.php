@@ -1,10 +1,15 @@
 <?php
 
 require "..\..\models\ClienteDAO.php";
-
+sleep(5);
 $clienteDAO = new ClienteDAO();
 $con = $clienteDAO->conectar();
+
+$nome = filter_input(INPUT_POST, "nomeCliente", FILTER_SANITIZE_STRING);
+$cpf = filter_input(INPUT_POST, "cpfCnpj", FILTER_SANITIZE_STRING);
+
 $id = isset($_POST['id']) ? $_POST['id'] : null;
+
 
 if (!is_null($id)) { //Comentario
 
