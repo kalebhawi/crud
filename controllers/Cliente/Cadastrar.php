@@ -6,7 +6,7 @@ $clienteDAO = new ClienteDAO();
 $con = $clienteDAO->conectar();
 $id = isset($_POST['id']) ? $_POST['id'] : null;
 
-if (!is_null($id)) {
+if (!is_null($id)) { //Comentario
 
     $sql = "update clientes set nome = '{$_POST['nomeCliente']}', cpf_cnpj = '{$_POST['cpfCnpj']}'  where id = $id";
     $clienteBd = mysqli_query($con, $sql);
